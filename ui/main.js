@@ -1,7 +1,7 @@
 ///counter code
 var button= document.getElementById("counter");
 var counter=0;
-button.onclick= function() {
+button.onclick = function() {
   
   //make a request to the counter end poin
   
@@ -9,7 +9,7 @@ button.onclick= function() {
   
   //render the variable in the correct span
   counter=counter+1;
-  var span=document.getElementById('çount');
+  var span=document.getElementById("çount");
   span.innerHTML=counter.toString();
   
     
