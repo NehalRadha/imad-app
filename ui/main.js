@@ -20,6 +20,6 @@ button.onclick = function() {
     //not done yet
 };
 // Make a request
-    request.open('GET', 'http://nehalradha.imad.hasura-app/counter',true);
+    request.open('GET', 'http://nehalradha95.imad.hasura-app.io/counter',true);
     request.send(null);
 };
