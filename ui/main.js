@@ -18,7 +18,7 @@ button.onclick = function() {
             span.innerHTML=counter.toString();
         }
     }  
-    not done yet
+   
 };
 // Make a request
     request.open('GET', 'http://nehalradha95.imad.hasura-app.io/counter',true);
