@@ -24,9 +24,9 @@ button.onclick = function() {
   //  request.open('GET', 'http://nehalradha95.imad.hasura-app.io/counter',true);
     //request.send(null);
 
-    counter = counter+1;
+    counter = counter + 1;
     var span= document.getElementById('çount');
-    span.innerHTML=counter.toString();
+    span.innerHTML = count.toString();
     
     
 };
