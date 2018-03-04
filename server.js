@@ -15,40 +15,6 @@ var config= {
 var app = express();
 app.use(morgan('combined'));
 
-var articles={
-    'article-one' : {
-        title: 'Article One | Nehal',
-        heading:'Article One',
-        date: 'Feb 17,2018',
-        content: `<p>
-                        This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.
-                    </p>
-                    <p>
-                        This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.
-                    </p>
-                    <p>
-                        This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.This is my content for First article.
-                    </p>`
-    },
-    'article-two':{
-        title: 'Article Two | Nehal',
-        heading:'Article Two',
-        date: 'Feb 18,2018',
-        content: `<p>
-                        This is my content for 2nd article.
-                    </p>`
-        
-    },
-    'article-three':{
-        title: 'Article Three | Nehal',
-        heading:'Article Three',
-        date: 'Feb 19,2018',
-        content: `<p>
-                        This is my content for 3rd article.
-                    </p>`
-        
-    }
-};
 function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
@@ -127,7 +93,7 @@ app.get('/articles/:articleName', function (req, res){
     //articleName== article-one
     //articleName=={}content object for article one
    
-   //SELECT * FROM articles WHERE title = ''; DELETE WHERE a='asdf'
+   //SELECT * FROM articles WHERE title = '\'; DELETE WHERE a=\'asdf'
    
    pool.query("SELECT * FROM articles WHERE title = $1",[req.params.articleName], function(err, result){
       if(err) {
