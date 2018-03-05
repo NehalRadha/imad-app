@@ -145,6 +145,10 @@ app.get('/check-login', function(req,res){
         res.send('You are not logged in');
     }
 });
+app.get('/logout', function(req,res) {
+   delete req.session.outh;
+   res.send('Your logged out');
+});
 
 var pool= new Pool(config);
 
