@@ -101,7 +101,7 @@ app.post('/login', function(req,res){
  
    pool.query('SELECT * FROM  "users" WHERE username = $1', [username], function(err,result) {
             if(err) {
-          res.status(500).send(err.toSring());
+          res.status(500).send(err.toString());
       } 
       else {
           if(result.rows.length===0) {
@@ -110,7 +110,7 @@ app.post('/login', function(req,res){
               //match the password
               var dbString = result.rows[0].password;
               var salt= dbString.split('$')[2];
-              var hashedPasword= hash(password, salt);//Creating a hash based on the password submitted and the original salt
+              var hashedPassword= hash(password, salt);//Creating a hash based on the password submitted and the original salt
             if(hashedPassword === dbString){
          res.send('credentials correct ');
       
