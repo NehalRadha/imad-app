@@ -14,15 +14,12 @@ submit.onclick= function() {
     if(request.readyState=== XMLHttpRequest.DONE) {
        //Take some action
         if(request.status === 200){
-           console.log('user logged in');
            alert('Logged in Successfully');
         }else if(request.status===403){
-    
-        alert('Username /Password incorrect');
-    } else if (request.status===500){
-    
-        alert('something went wrong on the server');
-    }
+            alert('Username /Password incorrect');
+        }else if (request.status===500){
+            alert('something went wrong on the server');
+        }
     }
     
    //not yet done
@@ -30,8 +27,8 @@ submit.onclick= function() {
 // Make a request
     var username=document.getElementById("username").value;
     var password=document.getElementById("password").value;
- console.log(username);
-  console.log(passwword);
+    console.log(username);
+    console.log(password);
     request.open('POST', 'http://nehalradha95.imad.hasura-app.io/login',true);
     request.setRequsetHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
